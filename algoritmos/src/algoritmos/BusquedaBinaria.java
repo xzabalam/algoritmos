@@ -1,5 +1,6 @@
 /**
  * Clase BusquedaBinaria.java 28 oct. 2021
+ * Todos los derechos reservados.
  */
 package algoritmos;
 
@@ -20,7 +21,7 @@ public class BusquedaBinaria {
 		int posicionActual = 0;
 		int posicionFinal = lista.size() - 1;
 
-		final AtomicInteger numeroRepeticiones = new AtomicInteger(1);
+		new AtomicInteger(1);
 		while (posicionInicial <= posicionFinal) {
 			final int posicionMedia = (posicionInicial + posicionFinal) / 2;
 			final String adivinarItemBuscado = lista.get(posicionMedia);
@@ -37,33 +38,21 @@ public class BusquedaBinaria {
 			} else {
 				posicionActual = posicionInicial = posicionMedia + 1;
 			}
-
-			imprimirRepeticion(adivinarItemBuscado, itemABuscar, posicionActual, numeroRepeticiones.getAndIncrement(),
-					peso);
 		}
 
 		if (posicionInicial == -1) {
 			return lista.get(posicionActual);
 		}
 		return "No existe";
-
-	}
-
-	private static void imprimirRepeticion(String textoEncontrado, String textoBuscado, Integer posicion,
-			Integer numeroIntento, Integer peso) {
-		System.out.println(
-				MessageFormat.format("textoEncontrado {0}, textoBuscado {1}, posicion {2}, numeroIntento {3}, peso {4}",
-						textoEncontrado, textoBuscado, posicion, numeroIntento, peso));
 	}
 
 	public static void main(String[] args) {
 		final List<String> nombres = nombres();
 
-		for (int i = 0; i <= 1000; i++) {
+		for (int i = 0; i <= (10000 - 1); i++) {
 			final int posicionRandomABuscar = new Random().nextInt(nombres.size());
-			System.out.println("============================================");
 			final String resultado = busquedaBinaria(nombres, nombres.get(posicionRandomABuscar));
-			System.out.println(resultado);
+			System.out.println(MessageFormat.format("número búsqueda {0} resultado {1}", i + 1, resultado));
 		}
 
 	}
