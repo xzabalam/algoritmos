@@ -1,7 +1,5 @@
 /**
  * Clase BusquedaBinaria.java 28 oct. 2021
- * Copyright 2021 Servicio de Rentas Internas.
- * Todos los derechos reservados.
  */
 package algoritmos;
 
@@ -12,7 +10,7 @@ import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @author fxzm210418
+ * @author xzabalam
  *
  */
 public class BusquedaBinaria {
